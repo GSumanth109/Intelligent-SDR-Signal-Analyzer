@@ -1,10 +1,10 @@
 # 🗼 TOKYO SIGINT: Intelligent SDR Reception & AI Transcription System
 
-A high-performance Software-Defined Radio (SDR) pipeline designed for real-time FM signal analysis, automated noise profiling, and live Japanese-to-English translation. Developed as a Research Project for a Signal Analysis course at SRMIST and refined during a research exchange at Waseda University.
+A high-performance Software-Defined Radio (SDR) pipeline designed for real-time FM signal analysis, automated noise profiling, and live Japanese-to-English translation. Developed as a Research Project for a Signal Analysis course at Waseda University.
 
 ## 📡 Overview
 
-Traditional FM receivers often struggle with static noise, low adaptability, and high false-positive rates when scanning for clear frequencies. **TOKYO SIGINT** addresses these challenges by integrating **Digital Signal Processing (DSP)** with **Deep Learning** to create an adaptive, "smart" radio environment.
+Traditional FM receivers often struggle with static noise, low adaptability, and high false-positive rates when scanning for clear frequencies. **TOKYO SIGINT** addresses these challenges by integrating **Digital Signal Processing (DSP)** with **Deep Learning** to create an adaptive, "smart" radio environment. This system also helps translate foreign language radio.
 
 ### ✨ Core Capabilities
 
@@ -17,7 +17,7 @@ Traditional FM receivers often struggle with static noise, low adaptability, and
 * **Live AI Translation**: Utilizes the offline **Vosk STT** engine for Japanese speech-to-text, followed by a multi-threaded **Google Translator** pipeline for real-time English subtitles.
 
 ## 🏗️ System Architecture
-
+n
 The system utilizes a modular hybrid architecture combining hardware, DSP, and Python-based AI orchestration communicating via ZeroMQ (ZMQ).
 
 *Figure 1: High-level data flow from RF capture to AI UI output.*
@@ -97,14 +97,6 @@ The system features an asynchronous AI pipeline designed to handle variable back
    
    ```
 
-## 🗺️ Future Work / Roadmap
 
-As an open-source research tool, future planned features include:
 
-* [ ] Migration of the Python OOT blocks to C++ for lower latency and lower CPU overhead.
-
-* [ ] Support for broader SDR hardware (HackRF, PlutoSDR) via SoapySDR bindings directly in the dashboard.
-
-* [ ] Implementation of Whisper API as a drop-in replacement alternative for Vosk.
-
-*Developed by Sumanth Gopisetty & Guillem Balmanya.*
+*Developed by Sumanth Gopisetty*
