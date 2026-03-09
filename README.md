@@ -98,10 +98,10 @@ The system features an asynchronous AI pipeline designed to handle variable back
 
 As an open-source research tool, future planned features include:
 
-* \[ \] Migration of the Python OOT blocks to C++ for lower latency and lower CPU overhead.
+* [ ] Migration of the Python OOT blocks to C++ for lower latency and lower CPU overhead.
 
-* \[ \] Support for broader SDR hardware (HackRF, PlutoSDR) via SoapySDR bindings directly in the dashboard.
+* [ ] Support for broader SDR hardware (HackRF, PlutoSDR) via SoapySDR bindings directly in the dashboard.
 
-* \[ \] Implementation of Whisper API as a drop-in replacement alternative for Vosk.
+* [ ] Implementation of Whisper API as a drop-in replacement alternative for Vosk.
 
 *Developed by Sumanth Gopisetty & Guillem Balmanya.*
