@@ -21,12 +21,14 @@ Traditional FM receivers often struggle with static noise, low adaptability, and
 The system utilizes a modular hybrid architecture combining hardware, DSP, and Python-based AI orchestration communicating via ZeroMQ (ZMQ).
 
 *Figure 1: High-level data flow from RF capture to AI UI output.*
+![System Architecture Diagram](architecture_diagram.jpeg)
 
 ### 1. The DSP Pipeline (GNU Radio)
 
 Raw RF is captured by an **RTL-SDR V4** at 1.92 MSps, downconverted, Wideband FM (WBFM) demodulated, and then analyzed for signal metrics using the custom `nrp_signal_analyzer` block.
 
 *Figure 2: Complete DSP system flowgraph visualized in GNU Radio Companion.*
+![GNU Radio Flowgraph](gnuradio_flowgraph.jpg)
 
 ### 2. Custom OOT Blocks (The "NRP" Module)
 
@@ -41,13 +43,14 @@ The custom **NRP (Numerical Research Project)** module contains the unique signa
 A custom-built Python dashboard serves as the central control node. It subscribes to the ZMQ data streams from GNU Radio for both 16 kHz audio and real-time DSP metrics.
 
 *Figure 3: Main Tkinter dashboard featuring live SNR/Coherency visualization, intelligent squelch tuning, and active emitter selection.*
+![Dashboard Interface](dashboard_interface.jpeg)
 
 ## 🤖 AI Translation Engine
 
 The system features an asynchronous AI pipeline designed to handle variable background noise. Original audio is downsampled and gated by the adaptive squelch before being fed into the **Vosk offline speech-to-text model**. A secondary thread pushes the Japanese transcriptions through the Google Translator API.
 
 *Figure 4: Live console output showing original transcribed Japanese (white) and real-time English translation (green).*
-
+![Transcription and Translation Output](transcription_translation.jpeg)
 ## 📂 Repository Structure
 
 ```
