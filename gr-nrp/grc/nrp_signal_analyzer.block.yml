@@ -1,0 +1,27 @@
+id: nrp_signal_analyzer
+label: Signal Analyzer
+category: '[NRP]'
+
+templates:
+  imports: import gnuradio.nrp as nrp
+  make: nrp.signal_analyzer(${alpha})
+# --- THIS SECTION IS MISSING IN YOUR FILE ---
+parameters:
+- id: alpha
+  label: Smooth Rate
+  dtype: float
+  default: 0.001
+# --------------------------------------------
+
+inputs:
+- label: Audio In
+  dtype: float
+
+outputs:
+- label: SNR (dB)
+  dtype: float
+- label: Coherency (0-1)
+  dtype: float
+
+# Make sure 'file_format' is at the bottom
+file_format: 1

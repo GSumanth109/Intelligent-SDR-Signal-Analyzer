@@ -1,0 +1,40 @@
+id: nrp_adaptive_noise_profiler
+label: Adaptive Noise Profiler
+category: '[NRP]'
+
+templates:
+  imports: from gnuradio import nrp
+  make: nrp.adaptive_noise_profiler(${fft_size}, ${rms_threshold}, ${avg_alpha})
+
+# These parameters match the __init__ arguments in your Python code
+parameters:
+- id: fft_size
+  label: FFT Size
+  dtype: int
+  default: 512
+- id: rms_threshold
+  label: RMS Threshold
+  dtype: float
+  default: 0.01
+- id: avg_alpha
+  label: Avg Alpha
+  dtype: float
+  default: 0.95
+
+# Defines the float input stream (connects to left side of block)
+inputs:
+- label: in
+  domain: stream
+  dtype: float
+
+# Defines the float output stream (pass-through) AND the message port
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+- label: noise_profile
+  domain: message
+  id: noise_profile
+  optional: true
+
+file_format: 1

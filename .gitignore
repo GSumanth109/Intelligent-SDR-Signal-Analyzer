@@ -1,0 +1,13 @@
+# Compiled Python files
+__pycache__/
+*.py[cod]
+
+# GNU Radio build directories
+build/
+gr-nrp/build/
+
+# AI Models (Too large for GitHub)
+model/
+
+# OS generated files
+.DS_Store
